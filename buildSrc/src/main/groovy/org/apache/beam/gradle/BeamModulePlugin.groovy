@@ -386,7 +386,7 @@ class BeamModulePlugin implements Plugin<Project> {
     def aws_java_sdk_version = "1.11.718"
     def aws_java_sdk2_version = "2.13.54"
     def cassandra_driver_version = "3.8.0"
-    def checkerframework_version = "3.5.0"
+    def checkerframework_version = "3.6.0"
     def classgraph_version = "4.8.65"
     def gax_version = "1.54.0"
     def generated_grpc_ga_version = "1.85.1"
@@ -415,7 +415,7 @@ class BeamModulePlugin implements Plugin<Project> {
     def protobuf_version = "3.11.1"
     def quickcheck_version = "0.8"
     def spark_version = "2.4.6"
-    def spotbugs_version = "4.0.6"
+    def spotbugs_version = "4.1.1"
     def testcontainers_localstack_version = "1.14.3"
 
     // A map of maps containing common libraries used per language. To use:
@@ -885,7 +885,7 @@ class BeamModulePlugin implements Plugin<Project> {
       project.apply plugin: "net.ltgt.apt-eclipse"
 
       // Enables a plugin which can apply code formatting to source.
-      project.apply plugin: "com.diffplug.gradle.spotless"
+      project.apply plugin: "com.diffplug.spotless"
       // scan CVE
       project.apply plugin: "net.ossindex.audit"
       project.audit { rateLimitAsError = false }
@@ -1502,7 +1502,7 @@ class BeamModulePlugin implements Plugin<Project> {
     project.ext.applyGroovyNature = {
       project.apply plugin: "groovy"
 
-      project.apply plugin: "com.diffplug.gradle.spotless"
+      project.apply plugin: "com.diffplug.spotless"
       def disableSpotlessCheck = project.hasProperty('disableSpotlessCheck') &&
           project.disableSpotlessCheck == 'true'
       project.spotless {
